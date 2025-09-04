@@ -1,0 +1,107 @@
+---
+
+# 🛰️ NAT (Network Address Translation)
+
+---
+
+## 1️⃣ Simple Definition
+
+NAT = **Technique used in networking to translate one IP address into another**.
+👉 It allows **private IPs inside your home/office** to talk to the **public Internet**.
+
+---
+
+## 2️⃣ Real Life Example (Easy to Relate)
+
+🎭 Imagine ek **theater hall** hai:
+
+* Andar (private area) → 100 log baithe hain (private IPs).
+* Bahar (public area) → Sirf 1 ticket window hai (public IP).
+
+Whenever koi bhi andar ka banda bahar jaake khana order karta hai,
+wo apna **original naam (private IP)** nahi batata — instead,
+**ticket window ka number (public IP)** use karta hai.
+
+👉 Yahi NAT hai! 😍
+
+* Inside log → Private IPs
+* Ticket Window → NAT Device (router)
+* Outside world → Public Internet
+
+---
+
+## 3️⃣ Why Do We Need NAT?
+
+* **IP addresses are limited** (IPv4 = only \~4.3 billion).
+* **Private IPs can’t go directly on Internet**.
+* NAT helps by:
+
+  * Hiding private IPs from outside world (security 🔒).
+  * Allowing multiple devices to use **1 public IP**.
+
+---
+
+## 4️⃣ Types of NAT
+
+### (a) Static NAT 🪞
+
+* **One Private IP ↔ One Public IP**
+* Example:
+
+  * Server inside office = 192.168.1.10
+  * NAT assigns → 203.0.113.5
+  * Always same mapping.
+
+👉 Think of it like: ek permanent identity card.
+
+---
+
+### (b) Dynamic NAT 🎲
+
+* **One Private IP ↔ Any available Public IP (from pool)**
+* Example:
+
+  * Private user wants to go online.
+  * Router assigns → random available public IP.
+  * Next time, it may change.
+
+👉 Think of it like: har baar different mask pehen ke bahar jana.
+
+---
+
+### (c) PAT (Port Address Translation) / NAT Overload 🌍
+
+* **Many Private IPs → 1 Public IP using different ports**
+* Most common type (used in homes, offices).
+
+Example:
+
+* 192.168.1.2 → 203.0.113.5:1001
+* 192.168.1.3 → 203.0.113.5:1002
+* 192.168.1.4 → 203.0.113.5:1003
+
+👉 Think of it like: sab log ek hi ticket window se bahar ja rahe hain, but alag-alag **token numbers (ports)** use kar ke.
+
+---
+
+## 5️⃣ Advantages of NAT
+
+✔ Saves public IPs
+✔ Provides Security (hides internal network)
+✔ Allows multiple devices to share single internet connection
+
+---
+
+## 6️⃣ Disadvantages of NAT
+
+❌ Adds delay (translation process takes time)
+❌ Some applications (like VoIP, gaming) may face issues
+❌ End-to-end connectivity breaks (outside cannot directly reach inside)
+
+---
+
+## 7️⃣ Short Interview-Friendly Answer
+
+👉 *“NAT is a method that allows private IP addresses to access the Internet by translating them into a public IP. It can be Static, Dynamic, or PAT. The most common is PAT, where multiple devices share one public IP with different ports.”*
+
+---
