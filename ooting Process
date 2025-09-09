@@ -1,0 +1,70 @@
+Bhai 👌 ab mai tujhe **Booting Process** ekdum simple English + real-world example me samjhata hu, jisse interview me bhi confidently bol sake.
+
+---
+
+## 🔹 Real World Example
+
+Soch lo tum apna **bike start karte ho**:
+
+1. Key lagate ho 🔑 (power on).
+2. Engine self-start hota hai (basic check karta hai).
+3. Fuel aur spark set hota hai (engine boot).
+4. Bike ready hai chalane ke liye.
+
+👉 Yehi process computer me **booting** ke time hota hai.
+
+---
+
+## 🔹 What is Booting?
+
+Booting = The process of **starting a computer** and **loading the operating system (OS)** into RAM so that you can use it.
+
+---
+
+## 🔹 Steps in Booting Process
+
+1. **Power ON**
+
+   * Jaise hi power button dabate ho, electricity supply hoti hai.
+
+2. **POST (Power-On Self-Test)**
+
+   * Hardware check hota hai: RAM, CPU, keyboard, storage, etc.
+   * Agar problem hai → beep sound ya error message aata hai.
+
+3. **BIOS/UEFI Execution**
+
+   * BIOS (Basic Input Output System) ya UEFI firse hardware ko initialize karta hai.
+   * Bootable device (Hard disk, SSD, USB, CD) search karta hai.
+
+4. **Boot Loader (like GRUB, LILO, Windows Boot Manager)**
+
+   * Boot loader ek chhoti program hoti hai jo OS ko load karti hai.
+   * Example: Linux → GRUB, Windows → Boot Manager.
+
+5. **Loading OS into RAM**
+
+   * OS files (kernel) storage se RAM me load hoti hain.
+
+6. **Kernel Initialization**
+
+   * Kernel CPU, memory, devices ko control lena start karta hai.
+
+7. **Login Screen / Desktop**
+
+   * Ab tum apne system ko use kar sakte ho.
+
+---
+
+## 🔹 Types of Booting
+
+1. **Cold Booting** → Power off se computer ko start karna.
+2. **Warm Booting** → Restart karna (system already on hai, fir reboot).
+
+---
+
+## 🔑 One-Liner for Interview
+
+“Booting is the process of starting a computer, performing hardware checks, loading the OS via boot loader into RAM, and handing control to the operating system.”
+
+---
