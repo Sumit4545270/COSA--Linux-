@@ -1,0 +1,72 @@
+Bhai 👌 ab mai tujhe **VirtualBox me Linux (Debian) install karte waqt jo Primary Files/Configurations set karni hoti hain** unhe step by step samjhata hu. Ye basic cheezein hai jo **har VM ke liye must** hoti hain.
+
+---
+
+## 🔹 Step 1: New VM Banana
+
+1. VirtualBox khol → **New** pe click kar.
+2. Name: `Debian-Linux` (ya jo tu chahe).
+3. Type: **Linux**
+4. Version: **Debian (64-bit)**
+
+---
+
+## 🔹 Step 2: Memory (RAM) Allocation
+
+* Debian ke liye min 2 GB (2048 MB) RAM de.
+* Agar tere laptop me jyada RAM hai to 4 GB de sakta hai.
+
+---
+
+## 🔹 Step 3: Hard Disk (Primary Storage)
+
+1. **Create a virtual hard disk now** select kar.
+2. Format: `VDI (VirtualBox Disk Image)`
+3. Storage: `Dynamically allocated`
+4. Size: At least **20 GB** (recommended 25–30 GB).
+
+---
+
+## 🔹 Step 4: Boot File (ISO) Attach Karna
+
+1. VM select kar ke → **Settings → Storage**.
+2. Controller: IDE → **Empty disk select karo**.
+3. Right side me → **Choose a disk file** → apna Debian ISO select karo (downloaded from Debian.org).
+
+---
+
+## 🔹 Step 5: System Settings
+
+1. Go to **System → Motherboard**:
+
+   * Boot Order: CD/DVD first, then Hard Disk.
+   * Tick: **Enable EFI (Special OSes only)** → Debian ke liye optional, default chhod sakta hai.
+2. Go to **Processor**:
+
+   * At least 2 CPUs allocate kar agar tera host allow karta hai.
+
+---
+
+## 🔹 Step 6: Network Configuration (Primary Adapter)
+
+Yahaan teri requirement ke hisaab se choose karega:
+
+* **NAT Adapter** → Internet chahiye but isolated.
+* **Bridge Adapter** → Internet aur host ke jaisa IP chahiye.
+* **Host-Only** → Sirf host aur VM connect honge.
+  👉 Debian install karte waqt usually **NAT** choose karte hain (basic internet ke liye).
+
+---
+
+## 🔹 Step 7: Start VM & Install Debian
+
+* VM start karo → Debian ISO boot hoga.
+* Installer ke steps follow karo (language, keyboard, user, password, partition).
+* Disk partitioning: **Guided - use entire disk** (beginners ke liye best).
+
+---
+
+✅ Ab tu kaam karne layak Debian system ready hoga.
+Tu chaahe to baad me **Guest Additions** install kare (better performance, screen resize, copy-paste, shared folder ke liye).
+
+---
