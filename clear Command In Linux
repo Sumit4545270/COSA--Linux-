@@ -1,0 +1,74 @@
+Nice one bro 👍 The **`clear` command** is probably the easiest of all, but very handy.
+
+---
+
+# 🐧 `clear` Command in Linux
+
+## 🔑 What is `clear`?
+
+* `clear` is used to **clear the terminal screen**.
+* It removes all previous commands/output from view and gives you a fresh screen.
+* But 👉 it doesn’t delete anything; your commands are still in **history**.
+
+---
+
+## 📌 Syntax
+
+```bash
+clear
+```
+
+---
+
+## 📌 Examples
+
+### 1. Basic use
+
+```bash
+clear
+```
+
+👉 Terminal becomes empty (clean screen).
+
+---
+
+### 2. Shortcut key (same as `clear`)
+
+Press:
+
+```
+Ctrl + L
+```
+
+👉 Does the same thing as `clear`.
+
+---
+
+### 3. Clear but keep scrollback buffer (history still scrollable)
+
+```bash
+clear
+```
+
+👉 You can still scroll up to see old output.
+
+---
+
+### 4. Clear *everything* (including scrollback buffer)
+
+```bash
+clear && printf '\033c'
+```
+
+👉 Resets the terminal completely like reopening it.
+
+---
+
+## 🧠 Analogy
+
+Think of `clear` like **wiping a whiteboard 🧽**.
+
+* The old writing (commands) are gone from sight.
+* But you still “remember” them in your notes (command history).
+
+---
