@@ -1,0 +1,110 @@
+bro 👍 — **`su`** and **`sudo`** are two of the **most important Linux commands** when it comes to user switching and permissions. Let’s make it super clear.
+
+---
+
+# 🐧 `su` vs `sudo` in Linux
+
+## 🔑 1. `su` → **Switch User**
+
+* **`su`** = *substitute user* or *switch user*.
+* By default, it switches to the **root user** (superuser).
+* After switching, you’re permanently acting as that user until you exit.
+
+### 📌 Syntax
+
+```bash
+su [username]
+```
+
+### 📌 Examples
+
+1. Switch to root:
+
+```bash
+su
+```
+
+👉 It will ask for **root password**, then you become root.
+
+2. Switch to another user:
+
+```bash
+su rahul
+```
+
+👉 Switch to user `rahul`.
+
+3. Exit back to your user:
+
+```bash
+exit
+```
+
+---
+
+## 🔑 2. `sudo` → **Superuser Do**
+
+* **`sudo`** = *superuser do*.
+* Runs **a single command** with **admin/root privileges**.
+* You don’t switch permanently; only that command runs as root.
+* Uses **your password**, not root’s (if your user has sudo rights).
+
+### 📌 Syntax
+
+```bash
+sudo command
+```
+
+### 📌 Examples
+
+1. Run update as root:
+
+```bash
+sudo apt-get update
+```
+
+2. Edit a system file:
+
+```bash
+sudo nano /etc/hosts
+```
+
+3. Run command as another user:
+
+```bash
+sudo -u rahul whoami
+```
+
+---
+
+## 📌 Key Differences Between `su` and `sudo`
+
+| Feature         | `su`                                     | `sudo`                                            |
+| --------------- | ---------------------------------------- | ------------------------------------------------- |
+| Full form       | Switch User                              | Superuser Do                                      |
+| Default action  | Switch to root user                      | Run one command as root                           |
+| Password needed | Root password                            | Your own password                                 |
+| Duration        | Permanent (until `exit`)                 | Temporary (per command)                           |
+| Security        | Less secure (needs root password shared) | More secure (per-user control via `/etc/sudoers`) |
+
+---
+
+## 📌 Advanced Notes
+
+* `sudo su` → First use `sudo` (your password), then switch to `su` (root permanently).
+* Config file for `sudo` is:
+
+```bash
+/etc/sudoers
+```
+
+(edited safely with `visudo`).
+
+---
+
+## 🧠 Analogy
+
+* **`su`** = You **become the admin** and stay admin until you step down.
+* **`sudo`** = You **borrow the admin’s key 🔑** just for one action, then return it.
+
+---
