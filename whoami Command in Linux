@@ -1,0 +1,83 @@
+Nice pick bro 👍 Let’s clear the **`whoami` command** in Linux.
+
+---
+
+# 🐧 `whoami` Command in Linux
+
+## 🔑 What is `whoami`?
+
+* `whoami` = **Who Am I**
+* It shows the **username of the current user** who is logged into the system.
+
+👉 Simple but very useful for knowing **which account you are using** (especially when switching users with `su` or `sudo`).
+
+---
+
+## 📌 Syntax
+
+```bash
+whoami
+```
+
+---
+
+## 📌 Example
+
+### 1. Basic usage
+
+```bash
+whoami
+```
+
+👉 Output:
+
+```
+sumit
+```
+
+(If your username is `sumit`.)
+
+---
+
+### 2. Inside `sudo`
+
+```bash
+sudo whoami
+```
+
+👉 Output:
+
+```
+root
+```
+
+(Because you temporarily became the root user using `sudo`.)
+
+---
+
+## 📌 Difference with `who` command
+
+* `whoami` → shows **current username only**.
+* `who` → shows **all logged-in users**.
+
+Example:
+
+```bash
+who
+```
+
+👉 Output:
+
+```
+sumit   tty1   Sep 10 09:15
+rahul   pts/0  Sep 10 09:30 (:0)
+```
+
+---
+
+## 🧠 Analogy
+
+Think of `whoami` like **looking in the mirror 🪞** and asking:
+*"Which user am I right now?"*
+
+---
