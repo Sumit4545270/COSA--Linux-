@@ -1,0 +1,136 @@
+Let’s make **`grep` command** crystal clear step by step.
+
+---
+
+# 🐧 `grep` Command in Linux
+
+## 🔑 What is `grep`?
+
+* **grep** = **Global Regular Expression Print**
+* It searches for **text patterns** inside files or output.
+* Think of it like **Ctrl + F** in Linux terminal.
+
+---
+
+## 📌 Basic Syntax
+
+```bash
+grep [OPTIONS] PATTERN [FILE...]
+```
+
+* **PATTERN** = word/text you want to search.
+* **FILE** = file(s) where you want to search.
+
+---
+
+## 📌 Basic Examples
+
+### 1. Search for a word in a file
+
+```bash
+grep hello file.txt
+```
+
+👉 Finds all lines in `file.txt` that contain “hello”.
+
+---
+
+### 2. Case-insensitive search
+
+```bash
+grep -i hello file.txt
+```
+
+👉 Matches “hello”, “Hello”, “HELLO”, etc.
+
+---
+
+### 3. Show line numbers
+
+```bash
+grep -n hello file.txt
+```
+
+👉 Displays matching lines **with line numbers**.
+
+---
+
+### 4. Search in multiple files
+
+```bash
+grep hello file1.txt file2.txt
+```
+
+---
+
+### 5. Search recursively in folders
+
+```bash
+grep -r hello /home/sumit/
+```
+
+👉 Searches “hello” in all files inside `/home/sumit/`.
+
+---
+
+### 6. Show only matching part
+
+```bash
+grep -o hello file.txt
+```
+
+---
+
+### 7. Count matches
+
+```bash
+grep -c hello file.txt
+```
+
+👉 Tells how many lines contain “hello”.
+
+---
+
+### 8. Invert match (show lines that do **not** match)
+
+```bash
+grep -v hello file.txt
+```
+
+---
+
+## 📌 Common Options Cheat Sheet
+
+          | Option | Meaning                           | Example                  |
+          | ------ | --------------------------------- | ------------------------ |
+          | `-i`   | Ignore case                       | `grep -i linux file.txt` |
+          | `-n`   | Show line numbers                 | `grep -n linux file.txt` |
+          | `-c`   | Count matches                     | `grep -c linux file.txt` |
+          | `-v`   | Invert match (exclude pattern)    | `grep -v linux file.txt` |
+          | `-r`   | Recursive search in directories   | `grep -r linux /etc/`    |
+          | `-o`   | Show only matched part            | `grep -o linux file.txt` |
+          | `-l`   | Show only file names with matches | `grep -l linux *.txt`    |
+          | `-w`   | Match whole word only             | `grep -w cat file.txt`   |
+
+---
+
+## 📌 Example with Pipe (`|`)
+
+```bash
+ps aux | grep firefox
+```
+
+👉 Finds all running processes related to **firefox**.
+
+---
+
+## 🧠 Analogy
+
+Think of `grep` like a **magnifying glass 🔍**:
+
+* You have a big book (file).
+* Instead of reading everything, `grep` highlights only the lines you are looking for.
+
+---
+
+👉 Do you want me to also cover **`egrep` and `fgrep` (extended grep & fixed grep)** or just stick with `grep` for now?
