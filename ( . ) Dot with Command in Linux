@@ -1,0 +1,67 @@
+# 🐧 Meaning of `.` (dot) in Linux
+
+### 1. Current Directory
+
+```bash
+ls .
+```
+
+👉 Lists files in the **current directory**.
+(`.` = the folder you are currently in)
+
+---
+
+### 2. Parent Directory (`..`)
+
+```bash
+ls ..
+```
+
+👉 Lists files in the **parent folder** (one step back).
+
+---
+
+### 3. Run a Script in Current Shell
+
+```bash
+. script.sh
+```
+
+👉 Executes `script.sh` **in the current shell** (different from `./script.sh`, which runs in a new process).
+
+---
+
+### 4. Hidden Files
+
+Any file/folder starting with `.` is **hidden**.
+Example:
+
+* `.bashrc` → hidden file.
+* `.git/` → hidden folder.
+
+To see hidden files:
+
+```bash
+ls -a
+```
+
+---
+
+### 5. Path Usage
+
+```bash
+./program
+```
+
+👉 Run `program` in the current directory.
+(`./` means "look here, not in system folders").
+
+---
+
+## 🧠 Analogy
+
+* `.` = **this room** (current directory)
+* `..` = **go to the previous room (parent folder)**
+* `./file` = “use the file from this room”
+
+---
