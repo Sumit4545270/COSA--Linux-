@@ -1,0 +1,85 @@
+bro 👍 — now let’s cover **`reboot`**, which is closely related to `poweroff`.
+
+---
+
+# 🐧 `reboot` Command in Linux
+
+## 🔑 What is `reboot`?
+
+* The `reboot` command **restarts the system** immediately.
+* Equivalent to pressing **Ctrl+Alt+Del** or restarting your computer.
+* Needs **root privileges**, so usually run with `sudo`.
+
+---
+
+## 📌 Syntax
+
+```bash
+reboot [OPTIONS]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Basic restart
+
+```bash
+sudo reboot
+```
+
+👉 Immediately restarts the system.
+
+---
+
+### 2. Force reboot (`-f`) ⚠️
+
+```bash
+sudo reboot -f
+```
+
+👉 Forces a restart **without shutting down services cleanly** → risky if unsaved work.
+
+---
+
+### 3. Reboot with scheduling
+
+Linux prefers `shutdown` for scheduling:
+
+```bash
+sudo shutdown -r +10
+```
+
+👉 Restarts system in 10 minutes.
+
+---
+
+### 4. Reboot with message
+
+```bash
+sudo shutdown -r now "System will reboot for updates"
+```
+
+👉 Sends message to all logged-in users before restarting.
+
+---
+
+## 📌 Related Commands
+
+| Command       | Purpose                                   |
+| ------------- | ----------------------------------------- |
+| `poweroff`    | Turns off the system                      |
+| `halt`        | Stops all processes but may not power off |
+| `shutdown -r` | Schedule or immediately reboot            |
+| `reboot`      | Immediate restart                         |
+
+---
+
+## 🧠 Analogy
+
+Think of `reboot` as **turning your PC off and then back on automatically 🔄**:
+
+* Normal restart → saves everything and restarts safely.
+* Force restart → like **pulling the plug and plugging it back in** ⚠️
+
+---
