@@ -1,0 +1,128 @@
+Perfect bro 👍 — let’s cover **`cat`** and **`tac`** together, because they’re like mirror images in Linux.
+
+---
+
+# 🐧 `cat` Command in Linux
+
+## 🔑 What is `cat`?
+
+* `cat` = **concatenate**.
+* It is used to **read, create, and join files**.
+
+---
+
+## 📌 Syntax
+
+```bash
+cat [OPTIONS] [FILE...]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Show file content
+
+```bash
+cat file.txt
+```
+
+### 2. Show multiple files together
+
+```bash
+cat file1.txt file2.txt
+```
+
+👉 Displays one after the other.
+
+### 3. Create a new file
+
+```bash
+cat > notes.txt
+```
+
+(Type text, press **Ctrl+D** to save & exit).
+
+### 4. Append text to an existing file
+
+```bash
+cat >> notes.txt
+```
+
+(Type, then **Ctrl+D**).
+
+### 5. Show line numbers (`-n`)
+
+```bash
+cat -n file.txt
+```
+
+---
+
+# 🐧 `tac` Command in Linux
+
+## 🔑 What is `tac`?
+
+* `tac` = **reverse cat** (cat spelled backward).
+* It displays file content **from bottom to top (reverse order)**.
+
+---
+
+## 📌 Syntax
+
+```bash
+tac [OPTIONS] [FILE...]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Show file in reverse
+
+```bash
+tac file.txt
+```
+
+If file.txt contains:
+
+```
+Line 1
+Line 2
+Line 3
+```
+
+👉 Output:
+
+```
+Line 3
+Line 2
+Line 1
+```
+
+### 2. Multiple files in reverse order
+
+```bash
+tac file1.txt file2.txt
+```
+
+👉 Displays each file in reverse.
+
+---
+
+## 📌 Comparison of `cat` vs `tac`
+
+| Feature  | `cat`                  | `tac`                           |
+| -------- | ---------------------- | ------------------------------- |
+| Meaning  | Concatenate files      | Reverse concatenate             |
+| Order    | Top → Bottom           | Bottom → Top                    |
+| Use case | Read/Create/Join files | Reverse reading, debugging logs |
+
+---
+
+## 🧠 Analogy
+
+* **`cat`** is like **reading a book 📖 normally** (page 1 → last).
+* **`tac`** is like **reading it backward 🔄** (last page → first).
+
+---
