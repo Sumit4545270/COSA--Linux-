@@ -1,0 +1,108 @@
+Nice one bro 👍 let’s break down the **`mkdir` command** so you’ll never forget it.
+
+---
+
+# 🐧 `mkdir` Command in Linux
+
+## 🔑 What is `mkdir`?
+
+* **mkdir** = **make directory**
+* It is used to **create new folders** (directories) in Linux.
+
+---
+
+## 📌 Syntax
+
+```bash
+mkdir [OPTIONS] DIRECTORY_NAME
+```
+
+---
+
+## 📌 Basic Examples
+
+### 1. Create a single directory
+
+```bash
+mkdir myfolder
+```
+
+👉 Makes a folder named `myfolder`.
+
+---
+
+### 2. Create multiple directories at once
+
+```bash
+mkdir folder1 folder2 folder3
+```
+
+👉 Creates 3 folders.
+
+---
+
+### 3. Create parent directories (`-p`)
+
+```bash
+mkdir -p projects/java/spring
+```
+
+👉 If `projects` and `java` don’t exist, they’ll be created automatically.
+
+Without `-p`, this would give an error.
+
+---
+
+### 4. Show message when creating (`-v`)
+
+```bash
+mkdir -v newfolder
+```
+
+👉 Output:
+
+```
+mkdir: created directory 'newfolder'
+```
+
+---
+
+### 5. Set permissions while creating (`-m`)
+
+```bash
+mkdir -m 700 privatefolder
+```
+
+👉 Folder is created with **700 permissions** (`rwx------` → only you can access).
+
+---
+
+## 📌 Common Options Cheat Sheet
+
+| Option | Meaning                              | Example                |
+| ------ | ------------------------------------ | ---------------------- |
+| `-p`   | Create parent directories if missing | `mkdir -p a/b/c`       |
+| `-v`   | Verbose (show messages)              | `mkdir -v newfolder`   |
+| `-m`   | Set permissions                      | `mkdir -m 755 project` |
+
+---
+
+## 📌 Example with Multiple Options
+
+```bash
+mkdir -pv -m 755 myproject/src
+```
+
+👉 Creates the full path `myproject/src`, shows messages, and sets permissions to `755`.
+
+---
+
+## 🧠 Analogy
+
+Think of `mkdir` as **building new rooms in your house** 🏠.
+
+* Normal `mkdir` → build one room.
+* `mkdir -p` → also builds the missing hallway + doors.
+* `mkdir -m` → lock/unlock the room with permissions.
+
+---
