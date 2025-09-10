@@ -1,0 +1,106 @@
+bro 👍 Let’s wrap this up with the **`exit` command** — one of the simplest but very useful Linux commands.
+
+---
+
+# 🐧 `exit` Command in Linux
+
+## 🔑 What is `exit`?
+
+* The `exit` command is used to **close a terminal session** or **log out from a shell**.
+* If you are inside a **subshell** (like after `su`), `exit` takes you back to the previous shell.
+* If it’s the main terminal, `exit` closes the terminal window.
+
+---
+
+## 📌 Syntax
+
+```bash
+exit [N]
+```
+
+* `N` = exit status code (optional, mostly used in scripts).
+
+---
+
+## 📌 Examples
+
+### 1. Basic exit
+
+```bash
+exit
+```
+
+👉 Closes the current shell/terminal session.
+
+---
+
+### 2. Exit with a status code
+
+```bash
+exit 0
+```
+
+👉 Exit with success code (`0` = success).
+Useful in **bash scripts**.
+
+Example:
+
+```bash
+#!/bin/bash
+echo "Hello"
+exit 1
+```
+
+👉 This script exits with status code `1` (which usually means error).
+
+---
+
+### 3. Exit from `su` (root session)
+
+```bash
+su
+# (now you’re root)
+exit
+```
+
+👉 Takes you back to your normal user.
+
+---
+
+### 4. Exit from SSH session
+
+If you’re logged into another machine with `ssh`:
+
+```bash
+exit
+```
+
+👉 Logs you out and returns to your local machine.
+
+---
+
+## 📌 Exit Status Codes (Important in scripting)
+
+* `0` → Success
+* `1` → General error
+* `2` → Misuse of shell command
+* `126` → Command not executable
+* `127` → Command not found
+* `130` → Script terminated with Ctrl+C
+
+Check exit status of the last command with:
+
+```bash
+echo $?
+```
+
+---
+
+## 🧠 Analogy
+
+Think of `exit` like **walking out of a room 🚪**:
+
+* If you’re inside root (`su`), you walk back to your user.
+* If you’re in the terminal, you walk out and close it completely.
+
+---
