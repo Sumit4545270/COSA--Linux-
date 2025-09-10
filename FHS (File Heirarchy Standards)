@@ -1,0 +1,163 @@
+bro 👍 I can see your handwritten notes clearly. They are about **FHS (File Hierarchy Standard)** in Linux + some basic commands. Let me explain everything step by step in a **clean structured way** so you’ll have full clarity.
+
+---
+
+# 🐧 FHS (File Hierarchy Standard)
+
+This defines **how files and directories are organized in Linux**.
+
+## 📂 Important Directories
+
+1. **`/`** → Root directory
+
+   * Top of the filesystem.
+   * Everything starts from `/`.
+
+2. **`/bin`** → Essential user commands (binaries)
+
+   * Example: `ls`, `cat`, `cp`, `mv`
+   * Available for all users.
+
+3. **`/boot`** → Boot loader files
+
+   * Static files needed for booting (like `vmlinuz`, `grub`).
+
+4. **`/dev`** → Devices (special files)
+
+   * Example: `/dev/sda` (hard disk), `/dev/tty` (terminals).
+
+5. **`/home`** → User home directories
+
+   * Example: `/home/sumit`
+
+6. **`/lib`** → Essential shared libraries + kernel modules
+
+   * Needed for running system programs in `/bin` and `/sbin`.
+
+7. **`/media`** → Mount point for removable media
+
+   * Example: USB, CD-ROM.
+
+8. **`/mnt`** → Mount point for temporary filesystems
+
+   * Used for mounting disks temporarily.
+
+9. **`/opt`** → Optional software packages
+
+   * Example: third-party software like Chrome.
+
+10. **`/proc`** → Virtual filesystem (process info)
+
+    * Example: `/proc/cpuinfo`, `/proc/meminfo`.
+
+11. **`/root`** → Home directory of root user
+
+    * Not same as `/`. This is root **user’s personal folder**.
+
+12. **`/run`** → Runtime variable data
+
+    * Temporary data for processes after boot.
+
+13. **`/sbin`** → System binaries (essential for admin/root)
+
+    * Example: `shutdown`, `reboot`, `fdisk`.
+
+14. **`/sys`** → Kernel system info (virtual FS)
+
+    * Contains device and kernel info.
+
+15. **`/tmp`** → Temporary files
+
+    * Cleared often (sometimes at reboot).
+
+16. **`/usr`** → Secondary hierarchy
+
+    * User programs, read-only data.
+    * Example: `/usr/bin`, `/usr/lib`.
+
+17. **`/var`** → Variable files
+
+    * Example: logs (`/var/log`), mail, spool.
+
+18. **`/srv`** → Data for services
+
+    * Example: web server files (`/srv/www`).
+
+---
+
+# 🐧 Commands in your notes
+
+1. **`~` (tilde)** → Shortcut to home directory
+
+   ```bash
+   cd ~
+   ```
+
+2. **`rmdir`** → Remove **empty directory only**
+
+   ```bash
+   rmdir myfolder
+   ```
+
+3. **`rm -r`** → Remove directory **with content**
+
+   ```bash
+   rm -r myfolder
+   ```
+
+4. **`cd`** → Change directory
+
+   ```bash
+   cd Documents
+   cd ..
+   cd -
+   ```
+
+5. **`cp`** → Copy files/directories
+
+   ```bash
+   cp file1.txt file2.txt
+   cp -r folder1/ folder2/
+   ```
+
+6. **`mv`** → Move or rename files
+
+   ```bash
+   mv file.txt /home/sumit/
+   mv oldname.txt newname.txt
+   ```
+
+7. **`which`** → Locate command binary
+
+   ```bash
+   which ls
+   # Output: /bin/ls
+   ```
+
+8. **`link`** → Create a hard link
+
+   ```bash
+   link file1 file2
+   ```
+
+9. **`curl`** → Transfer data from/to server (URLs)
+
+   ```bash
+   curl https://example.com
+   ```
+
+---
+
+# 🧠 Analogy
+
+Think of Linux filesystem like a **city** 🏙️:
+
+* `/` = Central square (root of everything).
+* `/home` = Your personal house.
+* `/bin` = Tools for daily life (basic commands).
+* `/sbin` = Tools for admin/government only (system commands).
+* `/var` = Newspaper stand → keeps changing (logs).
+* `/tmp` = Trash bin → gets cleared often.
+* `/boot` = Power switch of the city (startup files).
+
+---
