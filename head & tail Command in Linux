@@ -1,0 +1,129 @@
+bro 👍 — now let’s dive into **`head`** and **`tail`** commands. These two are like opposite brothers in Linux 😅.
+
+---
+
+# 🐧 `head` Command in Linux
+
+## 🔑 What is `head`?
+
+* `head` shows the **first lines** of a file.
+* Default = first **10 lines**.
+
+---
+
+## 📌 Syntax
+
+```bash
+head [OPTIONS] [FILE...]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Show first 10 lines
+
+```bash
+head file.txt
+```
+
+### 2. Show first N lines (`-n`)
+
+```bash
+head -n 5 file.txt
+```
+
+👉 Shows top 5 lines.
+
+### 3. Show first N bytes (`-c`)
+
+```bash
+head -c 20 file.txt
+```
+
+👉 Shows first 20 characters.
+
+### 4. Multiple files
+
+```bash
+head file1.txt file2.txt
+```
+
+👉 Prints first 10 lines of each file.
+
+---
+
+# 🐧 `tail` Command in Linux
+
+## 🔑 What is `tail`?
+
+* `tail` shows the **last lines** of a file.
+* Default = last **10 lines**.
+
+---
+
+## 📌 Syntax
+
+```bash
+tail [OPTIONS] [FILE...]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Show last 10 lines
+
+```bash
+tail file.txt
+```
+
+### 2. Show last N lines (`-n`)
+
+```bash
+tail -n 5 file.txt
+```
+
+👉 Shows bottom 5 lines.
+
+### 3. Show last N bytes (`-c`)
+
+```bash
+tail -c 20 file.txt
+```
+
+👉 Shows last 20 characters.
+
+### 4. Follow a file in real-time (`-f`) 🔥
+
+```bash
+tail -f logfile.log
+```
+
+👉 Keeps showing new lines as they are added (super useful for monitoring logs).
+
+### 5. Multiple files
+
+```bash
+tail file1.txt file2.txt
+```
+
+---
+
+# 📌 `head` vs `tail`
+
+| Feature      | `head`                    | `tail`                   |
+| ------------ | ------------------------- | ------------------------ |
+| Default      | First 10 lines            | Last 10 lines            |
+| Custom lines | `head -n N`               | `tail -n N`              |
+| Custom bytes | `head -c N`               | `tail -c N`              |
+| Special use  | Preview beginning of file | Monitor logs (`tail -f`) |
+
+---
+
+## 🧠 Analogy
+
+* **`head`** = Reading the **first pages of a book 📖**.
+* **`tail`** = Jumping to the **last pages of a book 🔚**.
+
+---
