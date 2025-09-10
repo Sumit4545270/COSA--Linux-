@@ -1,0 +1,101 @@
+bro 👍 — **`nano`** is one of the simplest text editors in Linux, and every beginner should know it.
+
+---
+
+# 🐧 `nano` Command in Linux
+
+## 🔑 What is `nano`?
+
+* `nano` is a **command-line text editor**.
+* You can use it to **create, edit, and save files** directly in the terminal.
+* Easier than `vi` or `vim`, so it’s beginner-friendly.
+
+---
+
+## 📌 Syntax
+
+```bash
+nano [OPTIONS] [FILENAME]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Open (or create) a file
+
+```bash
+nano myfile.txt
+```
+
+👉 Opens `myfile.txt`. If it doesn’t exist, it creates it.
+
+---
+
+### 2. Open a file in **read-only** mode
+
+```bash
+nano -v myfile.txt
+```
+
+👉 You can view but not edit.
+
+---
+
+### 3. Open multiple files
+
+```bash
+nano file1.txt file2.txt
+```
+
+👉 Switch between them using **Ctrl+^**.
+
+---
+
+## 📌 Nano Editor Basics (Shortcuts)
+
+When you’re inside `nano`, shortcuts are shown at the bottom.
+👉 The `^` means **Ctrl key**.
+
+| Action            | Shortcut   |
+| ----------------- | ---------- |
+| Save file         | `Ctrl + O` |
+| Exit nano         | `Ctrl + X` |
+| Cut line          | `Ctrl + K` |
+| Paste line        | `Ctrl + U` |
+| Search text       | `Ctrl + W` |
+| Go to line number | `Ctrl + _` |
+| Justify paragraph | `Ctrl + J` |
+
+Example flow:
+
+1. Open file → `nano notes.txt`
+2. Type some text
+3. Save → `Ctrl + O`, press Enter
+4. Exit → `Ctrl + X`
+
+---
+
+## 📌 Advanced Options
+
+* Enable syntax highlighting:
+
+  ```bash
+  nano -Y python script.py
+  ```
+* Start at specific line number:
+
+  ```bash
+  nano +15 myfile.txt
+  ```
+
+👉 Opens file at line 15.
+
+---
+
+## 🧠 Analogy
+
+Think of `nano` as a **notepad inside Linux terminal** 📝.
+Simple, lightweight, and always available.
+
+---
