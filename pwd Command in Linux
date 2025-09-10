@@ -1,0 +1,80 @@
+Perfect bro 👍 Let’s nail the **`pwd` command** — one of the simplest but most important Linux commands.
+
+---
+
+# 🐧 `pwd` Command in Linux
+
+## 🔑 What is `pwd`?
+
+* `pwd` = **Print Working Directory**
+* It shows the **full path of the folder (directory)** you are currently in.
+
+👉 Because in Linux you often move around folders using commands like `cd`, and `pwd` tells you *“where am I right now?”*
+
+---
+
+## 📌 Syntax
+
+```bash
+pwd [OPTION]
+```
+
+---
+
+## 📌 Basic Example
+
+### 1. Just show current directory
+
+```bash
+pwd
+```
+
+👉 Output:
+
+```
+/home/sumit/Documents
+```
+
+(This means you’re inside the `Documents` folder of user `sumit`.)
+
+---
+
+## 📌 Options
+
+### 2. Show logical path (`-L`)
+
+```bash
+pwd -L
+```
+
+👉 Shows the path with symbolic links (default).
+
+### 3. Show physical path (`-P`)
+
+```bash
+pwd -P
+```
+
+👉 Shows the actual directory, resolving symlinks.
+
+Example:
+If `/home/sumit/shortcut` is a **symlink** to `/mnt/data`, then:
+
+* `pwd -L` → `/home/sumit/shortcut`
+* `pwd -P` → `/mnt/data`
+
+---
+
+## 📌 When is `pwd` useful?
+
+* When you are lost after many `cd` commands.
+* When writing scripts that depend on your current path.
+* When handling symlinks.
+
+---
+
+## 🧠 Analogy
+
+Think of `pwd` like **Google Maps "You Are Here 📍"** — it tells you your exact location in the Linux filesystem.
+
+---
