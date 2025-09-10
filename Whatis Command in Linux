@@ -1,0 +1,97 @@
+Good pick bro 👍 The **`whatis` command** is another simple but very handy Linux command. Let’s break it down.
+
+---
+
+# 🐧 `whatis` Command in Linux
+
+## 🔑 What is `whatis`?
+
+* `whatis` gives you a **one-line description** of a Linux command.
+* It’s like asking: *“Hey Linux, what does this command do?”*
+
+---
+
+## 📌 Syntax
+
+```bash
+whatis command_name
+```
+
+---
+
+## 📌 Examples
+
+### 1. Basic usage
+
+```bash
+whatis ls
+```
+
+👉 Output:
+
+```
+ls (1) - list directory contents
+```
+
+---
+
+### 2. Another command
+
+```bash
+whatis mkdir
+```
+
+👉 Output:
+
+```
+mkdir (1) - make directories
+```
+
+---
+
+### 3. Multiple commands at once
+
+```bash
+whatis ls mkdir grep
+```
+
+👉 Output:
+
+```
+ls (1)    - list directory contents
+mkdir (1) - make directories
+grep (1)  - print lines matching a pattern
+```
+
+---
+
+### 4. Command not found in database
+
+Sometimes you may see:
+
+```
+whatis: somecommand: nothing appropriate
+```
+
+👉 This means the `man` database is not updated.
+Fix by updating:
+
+```bash
+sudo mandb
+```
+
+---
+
+## 📌 Why use `whatis`?
+
+* Quick reminder of what a command does.
+* Saves time if you forget a command’s purpose.
+
+---
+
+## 🧠 Analogy
+
+Think of `whatis` like **Google’s snippet**:
+You search “ls” → it tells you in one line what it does, without reading the whole manual.
+
+---
