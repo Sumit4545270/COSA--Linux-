@@ -1,0 +1,129 @@
+Perfect bro 👍 now we’re at a very important command: **`history`**.
+
+---
+
+# 🐧 `history` Command in Linux
+
+## 🔑 What is `history`?
+
+* The `history` command shows you a **list of all commands** you typed earlier in the terminal.
+* Each command is stored with a **number (ID)** so you can reuse it quickly.
+
+👉 So even if you `clear` the screen, you can bring back old commands with `history`.
+
+---
+
+## 📌 Syntax
+
+```bash
+history [OPTIONS] [NUMBER]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Show entire command history
+
+```bash
+history
+```
+
+👉 Output looks like:
+
+```
+  1  ls
+  2  cd Documents
+  3  mkdir project
+  4  history
+```
+
+---
+
+### 2. Show last N commands
+
+```bash
+history 5
+```
+
+👉 Shows last 5 commands only.
+
+---
+
+### 3. Re-run a command using `!`
+
+If a command has a history number, you can repeat it using `!number`.
+
+Example:
+
+```bash
+!3
+```
+
+👉 Runs command number 3 from history (`mkdir project`).
+
+---
+
+### 4. Re-run last command
+
+```bash
+!!
+```
+
+👉 Runs the last command again.
+
+---
+
+### 5. Re-run last command starting with a word
+
+```bash
+!ls
+```
+
+👉 Runs the last command that started with `ls`.
+
+---
+
+### 6. Clear history
+
+```bash
+history -c
+```
+
+👉 Clears the history of the **current session**.
+
+---
+
+### 7. Save history to file
+
+```bash
+history -w
+```
+
+👉 Writes current session history to the history file (`~/.bash_history`).
+
+---
+
+## 📌 Common Options Cheat Sheet
+
+| Option    | Meaning                               | Example      |
+| --------- | ------------------------------------- | ------------ |
+| none      | Show full history                     | `history`    |
+| NUMBER    | Show last N commands                  | `history 10` |
+| `-c`      | Clear history (session only)          | `history -c` |
+| `-w`      | Write history to file                 | `history -w` |
+| `!n`      | Run command with history number n     | `!15`        |
+| `!!`      | Run last command again                | `!!`         |
+| `!string` | Run last command starting with string | `!cd`        |
+
+---
+
+## 🧠 Analogy
+
+Think of `history` like your **browser history** 🌐:
+
+* You can see what you did earlier.
+* You can quickly revisit old sites (commands).
+* You can clear it if needed.
+
+---
