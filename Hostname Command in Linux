@@ -1,0 +1,138 @@
+Nice flow bro 👍 Let’s go deep into the **`hostname` command** in Linux — very commonly asked in interviews too.
+
+---
+
+# 🐧 `hostname` Command in Linux
+
+## 🔑 What is `hostname`?
+
+* The **hostname** is the **name of your computer (system)** on a network.
+* The `hostname` command is used to **display or set** that name.
+
+👉 Think of it like your computer’s nickname when connected to Wi-Fi or LAN.
+
+---
+
+## 📌 Syntax
+
+```bash
+hostname [OPTION]
+```
+
+---
+
+## 📌 Basic Examples
+
+### 1. Show current hostname
+
+```bash
+hostname
+```
+
+👉 Output:
+
+```
+sumit-PC
+```
+
+---
+
+### 2. Show the IP address (`-i`)
+
+```bash
+hostname -i
+```
+
+👉 Output:
+
+```
+192.168.1.10
+```
+
+---
+
+### 3. Show the FQDN (Fully Qualified Domain Name) (`-f`)
+
+```bash
+hostname -f
+```
+
+👉 Output:
+
+```
+sumit.example.com
+```
+
+---
+
+### 4. Show all network addresses (`-I`)
+
+```bash
+hostname -I
+```
+
+👉 Output:
+
+```
+192.168.1.10 10.0.0.5
+```
+
+(Multiple addresses if multiple network interfaces are active.)
+
+---
+
+### 5. Show alias names (`-A`)
+
+```bash
+hostname -A
+```
+
+---
+
+### 6. Set a new hostname (temporary)
+
+```bash
+sudo hostname myserver
+```
+
+👉 Hostname will change to `myserver` (but only until restart).
+
+---
+
+### 7. Set hostname permanently
+
+* Edit file:
+
+  ```bash
+  sudo nano /etc/hostname
+  ```
+
+  Replace old name with new one.
+* Then update:
+
+  ```bash
+  sudo hostnamectl set-hostname myserver
+  ```
+
+---
+
+## 📌 Common Options Cheat Sheet
+
+| Option | Meaning          | Example       |
+| ------ | ---------------- | ------------- |
+| none   | Show hostname    | `hostname`    |
+| `-i`   | Show IP address  | `hostname -i` |
+| `-I`   | Show all IPs     | `hostname -I` |
+| `-f`   | Show FQDN        | `hostname -f` |
+| `-A`   | Show alias names | `hostname -A` |
+
+---
+
+## 🧠 Analogy
+
+Think of `hostname` as your **house name in a colony** 🏠:
+
+* Everyone on the network (neighbors) identifies you with that name.
+* You can change the name, but then people may need to update how they reach you.
+
+---
