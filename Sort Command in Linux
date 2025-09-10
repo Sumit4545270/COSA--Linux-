@@ -1,0 +1,128 @@
+let’s make the **`sort` command** super simple and useful for you.
+
+---
+
+# 🐧 `sort` Command in Linux
+
+## 🔑 What is `sort`?
+
+The **`sort` command** is used to **arrange lines of text** in a file or output.
+It can sort:
+
+* Alphabetically (A → Z, Z → A)
+* Numerically (1 → 9, 9 → 1)
+* By column (field)
+* With or without case sensitivity
+
+---
+
+## 📌 Basic Syntax
+
+```bash
+sort [OPTIONS] [FILE]
+```
+
+---
+
+## 📌 Basic Examples
+
+### 1. Sort a file alphabetically (A → Z)
+
+```bash
+sort names.txt
+```
+
+### 2. Sort in reverse order (Z → A)
+
+```bash
+sort -r names.txt
+```
+
+### 3. Sort numbers correctly
+
+```bash
+sort -n numbers.txt
+```
+
+👉 Without `-n`, `sort` treats numbers like text (`10` comes before `2`).
+👉 With `-n`, it sorts properly (`2, 10, 20`).
+
+### 4. Sort numbers in descending order
+
+```bash
+sort -nr numbers.txt
+```
+
+### 5. Remove duplicates while sorting
+
+```bash
+sort -u names.txt
+```
+
+### 6. Sort by a specific column
+
+Imagine a file `students.txt`:
+
+```
+Sumit 88
+Rahul 75
+Amit 92
+```
+
+Sort by **second column (marks):**
+
+```bash
+sort -k2 -n students.txt
+```
+
+👉 Sorted by marks.
+
+### 7. Case insensitive sorting
+
+```bash
+sort -f names.txt
+```
+
+### 8. Sort month names
+
+```bash
+sort -M months.txt
+```
+
+👉 Correctly sorts Jan, Feb, Mar, etc.
+
+---
+
+## 📌 Common Options Cheat Sheet
+
+| Option | Meaning                    | Example                |
+| ------ | -------------------------- | ---------------------- |
+| `-r`   | Reverse order              | `sort -r file.txt`     |
+| `-n`   | Numeric sort               | `sort -n numbers.txt`  |
+| `-u`   | Unique (remove duplicates) | `sort -u file.txt`     |
+| `-k`   | Sort by specific column    | `sort -k2 -n file.txt` |
+| `-f`   | Ignore case                | `sort -f file.txt`     |
+| `-M`   | Sort by month names        | `sort -M months.txt`   |
+
+---
+
+## 📌 Example with Pipe (`|`)
+
+```bash
+cat marks.txt | sort -k2 -n
+```
+
+👉 Sorts the contents of `marks.txt` by the second column (marks).
+
+---
+
+## 🧠 Analogy
+
+Think of `sort` like arranging your **contact list**:
+
+* A → Z (default)
+* Z → A (`-r`)
+* By phone number (`-n -k2`)
+* Without duplicate names (`-u`)
+
+---
