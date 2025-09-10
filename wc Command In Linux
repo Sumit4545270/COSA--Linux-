@@ -1,0 +1,137 @@
+bro 👍 — let’s go through the **`wc` command** step by step.
+
+---
+
+# 🐧 `wc` Command in Linux
+
+## 🔑 What is `wc`?
+
+* `wc` = **word count**.
+* It is used to count **lines, words, characters, and bytes** in a file or input.
+
+---
+
+## 📌 Syntax
+
+```bash
+wc [OPTION] [FILE...]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Count everything (default)
+
+```bash
+wc file.txt
+```
+
+👉 Output looks like:
+
+```
+  15   120   850 file.txt
+```
+
+* **15** → number of lines
+* **120** → number of words
+* **850** → number of characters (bytes)
+
+---
+
+### 2. Count only lines (`-l`)
+
+```bash
+wc -l file.txt
+```
+
+👉 Example output:
+
+```
+15 file.txt
+```
+
+---
+
+### 3. Count only words (`-w`)
+
+```bash
+wc -w file.txt
+```
+
+👉 Example output:
+
+```
+120 file.txt
+```
+
+---
+
+### 4. Count only characters (`-m`)
+
+```bash
+wc -m file.txt
+```
+
+👉 Example output:
+
+```
+850 file.txt
+```
+
+---
+
+### 5. Count only bytes (`-c`)
+
+```bash
+wc -c file.txt
+```
+
+👉 Example output:
+
+```
+850 file.txt
+```
+
+(`-c` and `-m` can differ if file has Unicode characters).
+
+---
+
+### 6. Multiple files
+
+```bash
+wc file1.txt file2.txt
+```
+
+👉 Gives counts for each file + total.
+
+---
+
+### 7. Use with pipes
+
+```bash
+ls | wc -l
+```
+
+👉 Counts how many files are in current directory.
+
+---
+
+## 📌 Common Options
+
+| Option | Meaning          | Example          |
+| ------ | ---------------- | ---------------- |
+| `-l`   | Count lines      | `wc -l file.txt` |
+| `-w`   | Count words      | `wc -w file.txt` |
+| `-m`   | Count characters | `wc -m file.txt` |
+| `-c`   | Count bytes      | `wc -c file.txt` |
+
+---
+
+## 🧠 Analogy
+
+Think of `wc` like a **page counter 📑**:
+
+* It tells you how many lines, words, and letters are inside your file — just like how Word/MS Office shows counts at the bottom.
+
+---
