@@ -1,0 +1,111 @@
+bro 👍 — now let’s cover the **`cd` command**, which is one of the **most basic and important Linux commands**.
+
+---
+
+# 🐧 `cd` Command in Linux
+
+## 🔑 What is `cd`?
+
+* `cd` = **change directory**
+* It is used to **move between folders** in Linux.
+* Linux has a hierarchical file system, so you often need to navigate directories using `cd`.
+
+---
+
+## 📌 Syntax
+
+```bash
+cd [DIRECTORY]
+```
+
+---
+
+## 📌 Examples
+
+### 1. Go to a specific directory
+
+```bash
+cd /home/sumit/Documents
+```
+
+👉 Moves you to the `Documents` folder.
+
+---
+
+### 2. Go to home directory
+
+```bash
+cd
+```
+
+or
+
+```bash
+cd ~
+```
+
+👉 `~` = shorthand for your home directory (`/home/username`).
+
+---
+
+### 3. Go to parent directory
+
+```bash
+cd ..
+```
+
+👉 Moves one level **up** in the directory tree.
+
+---
+
+### 4. Go back to previous directory
+
+```bash
+cd -
+```
+
+👉 Moves to the directory you were in **just before** the current one.
+
+---
+
+### 5. Relative paths
+
+```bash
+cd Projects/Java
+```
+
+* Moves to `Java` folder inside `Projects` from **current directory**.
+
+---
+
+### 6. Absolute paths
+
+```bash
+cd /var/log
+```
+
+* Moves to `/var/log` regardless of current location.
+
+---
+
+## 📌 Tips
+
+* `pwd` → Use it to check your **current directory** after moving.
+* Tab completion → Press **Tab** while typing a folder name for **auto-completion**.
+
+---
+
+## 🧠 Analogy
+
+Think of the Linux filesystem like a **house with rooms 🏠**:
+
+* `cd Kitchen` → move into the kitchen
+* `cd ..` → go back to the previous room
+* `cd ~` → go to your bedroom (home directory)
+* `cd -` → go back to the last room you were in
+
+---
+
+This is super foundational because **every file operation** depends on **knowing where you are** and navigating correctly.
+
+---
