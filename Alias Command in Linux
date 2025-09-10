@@ -1,0 +1,88 @@
+Let’s go step by step 👇
+
+---
+
+# 🐧 `alias` Command (from manual)
+
+### 📌 Syntax
+
+```bash
+alias [OPTION] [name[='value'] ...]
+```
+
+### 📌 Common Options
+
+* **Without any argument** → shows all current aliases.
+
+  ```bash
+  alias
+  ```
+* **Create alias**
+
+  ```bash
+  alias ll='ls -lah --color=auto'
+  ```
+* **Display alias (without changing)**
+
+  ```bash
+  alias ll
+  ```
+
+  👉 Output:
+
+  ```
+  alias ll='ls -lah --color=auto'
+  ```
+
+⚠️ Note: `alias` has no special flags like `-r`. It’s mostly plain usage.
+
+---
+
+# 🐧 `unalias` Command (from manual)
+
+### 📌 Syntax
+
+```bash
+unalias [-a] name [name ...]
+```
+
+### 📌 Options
+
+* **`unalias name`** → removes one alias.
+
+  ```bash
+  unalias ll
+  ```
+* **`unalias -a`** → removes *all* aliases at once.
+
+  ```bash
+  unalias -a
+  ```
+
+### ❌ Example
+
+```bash
+alias hi='echo Hello'
+hi          # prints "Hello"
+unalias hi  # remove it
+hi          # now says "command not found"
+```
+
+---
+
+# ⚡ Quick Reference (Cheat Sheet)
+
+| Command                | Meaning               |
+| ---------------------- | --------------------- |
+| `alias`                | List all aliases      |
+| `alias name='command'` | Create alias          |
+| `alias name`           | Show alias definition |
+| `unalias name`         | Remove single alias   |
+| `unalias -a`           | Remove all aliases    |
+
+---
+
+✅ So, **alias** doesn’t really have flags like `-r`, but **unalias has `-a`** (all).
+The `-r` option you heard about actually belongs to other commands (like `rm -r` or `rmdir -r`), not to alias.
+
+---
