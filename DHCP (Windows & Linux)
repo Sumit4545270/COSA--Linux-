@@ -1,0 +1,106 @@
+You want to understand **how to configure DHCP Server** on one VM and let another VM (Client) automatically get an IP address from it — both in **Windows** and **Linux**. I’ll give you a **super simple step-by-step** for each.
+
+---
+
+# 🖥️ Part 1: DHCP in **Windows Server VM** → Client VM
+
+### On **Windows Server (Server VM)**
+
+1. Open **Server Manager → Add Roles and Features**.
+2. Select **DHCP Server** → install.
+3. After install, open **DHCP console** (Tools → DHCP).
+4. Right-click IPv4 → **New Scope**.
+
+   * Name: `TestScope`.
+   * IP range: `192.168.10.100` to `192.168.10.200`.
+   * Subnet mask: `255.255.255.0`.
+   * Gateway (optional): `192.168.10.1`.
+5. Activate the scope.
+6. Make sure your server has a **static IP** (e.g. `192.168.10.1`).
+
+### On **Windows/Linux Client VM**
+
+* Set the network adapter to **Internal Network** (same name as server).
+* In client network settings, set IP to **Obtain IP automatically**.
+* Restart client → run:
+
+  * On Windows: `ipconfig` (you should see an IP like `192.168.10.101`).
+  * On Linux: `ip addr` or `dhclient` (you should see same range IP).
+
+---
+
+# 🐧 Part 2: DHCP in **Linux Server VM** → Client VM
+
+We’ll use **isc-dhcp-server** package (Ubuntu/Debian example).
+
+### On **Linux Server (Server VM)**
+
+1. Install DHCP server:
+
+   ```bash
+   sudo apt update
+   sudo apt install isc-dhcp-server -y
+   ```
+2. Edit config file:
+
+   ```bash
+   sudo nano /etc/dhcp/dhcpd.conf
+   ```
+
+   Add this:
+
+   ```
+   subnet 192.168.20.0 netmask 255.255.255.0 {
+       range 192.168.20.100 192.168.20.200;
+       option routers 192.168.20.1;
+       option domain-name-servers 8.8.8.8;
+   }
+   ```
+3. Assign static IP to server:
+   Example: `192.168.20.1/24` on its internal adapter.
+
+   ```bash
+   sudo nano /etc/netplan/01-netcfg.yaml
+   ```
+
+   Example content:
+
+   ```yaml
+   network:
+     version: 2
+     ethernets:
+       enp0s3:
+         addresses: [192.168.20.1/24]
+   ```
+
+   Apply:
+
+   ```bash
+   sudo netplan apply
+   ```
+4. Restart DHCP service:
+
+   ```bash
+   sudo systemctl restart isc-dhcp-server
+   sudo systemctl enable isc-dhcp-server
+   ```
+
+### On **Linux/Windows Client VM**
+
+* Set network adapter to **Internal Network** (same as Linux server).
+* In client network config → select **DHCP / Automatic IP**.
+* Restart network:
+
+  * Linux: `sudo dhclient`
+  * Windows: `ipconfig /renew`
+* You’ll get an IP in range `192.168.20.100–200`.
+
+---
+
+✅ **In short**:
+
+* Server VM = has DHCP role/software + static IP.
+* Client VM = set to automatic IP → gets IP from server.
+* Both must be in the **same VirtualBox Internal Network**.
+
+---
