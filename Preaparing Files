@@ -1,0 +1,100 @@
+Preparing files: - (Import Machine + (Network Adapters:- (Host Only Adapters + NAT Adapter + NAT Network Adapter + Internal Adapter) ) + Configure APT + Configure Network File + Install SSH Server + Install Man Command)
+
+Perfect 👍 let’s keep it **super basic**.
+We’ll just prepare a **Linux VM in VirtualBox** with **internet access**, **SSH**, and **man** pages — nothing advanced.
+
+---
+
+# 🛠️ Basic VM Configuration (Step by Step)
+
+### 1. Import / Create VM
+
+* In VirtualBox → **New** → Choose `Linux (Debian/Ubuntu)` → give it RAM, disk → attach ISO → install OS.
+
+---
+
+### 2. Network (only NAT adapter for now)
+
+* VM Settings → **Network** → Adapter 1 = **NAT**.
+  👉 NAT will give your VM internet through your host.
+
+---
+
+### 3. Boot VM & Update system
+
+Inside the VM:
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+---
+
+### 4. Configure APT (basic)
+
+Already set during install. If broken, edit:
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
+Add (example Ubuntu):
+
+```
+deb http://archive.ubuntu.com/ubuntu focal main universe
+```
+
+Save → exit → `sudo apt update`.
+
+---
+
+### 5. Install SSH & Man
+
+```bash
+sudo apt install -y openssh-server man-db
+```
+
+Enable SSH:
+
+```bash
+sudo systemctl enable --now ssh
+```
+
+Check:
+
+```bash
+sudo systemctl status ssh
+```
+
+---
+
+### 6. Test Networking
+
+Check your IP:
+
+```bash
+ip a
+```
+
+Test internet:
+
+```bash
+ping -c 3 google.com
+```
+
+Test man:
+
+```bash
+man ls
+```
+
+---
+
+👉 That’s it for **basic configuration**.
+
+* NAT = internet works.
+* SSH server installed.
+* `man` pages installed.
+
+---
