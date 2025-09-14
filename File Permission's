@@ -1,0 +1,95 @@
+Got it ✅ Let’s make **File Permissions** as simple as possible, like you’re teaching a beginner friend.
+
+---
+
+# 🔑 File Permissions (Super Simple)
+
+Every file/folder in Linux has 2 things:
+
+1. **Who** can access it → User, Group, Others.
+2. **What** they can do → Read, Write, Execute.
+
+---
+
+## 1. WHO?
+
+* **User (u)** = the owner (the person who created the file).
+* **Group (g)** = a team of users.
+* **Others (o)** = everyone else.
+* **All (a)** = u+g+o together.
+
+---
+
+## 2. WHAT?
+
+* **Read (r)** → open and read the file.
+* **Write (w)** → edit or delete the file.
+* **Execute (x)** → run the file (if it’s a program/script).
+
+---
+
+## 3. See Permissions
+
+```bash
+ls -l
+```
+
+Example:
+
+```
+-rwxr-xr--
+```
+
+Break it:
+
+* `rwx` → User (owner) can **read, write, run**.
+* `r-x` → Group can **read, run**.
+* `r--` → Others can only **read**.
+
+---
+
+## 4. Change Permissions (chmod)
+
+### Method 1: Symbols
+
+```bash
+chmod u+x file   # give user execute
+chmod g-w file   # remove write from group
+chmod o+r file   # give others read
+chmod a+x file   # give everyone execute
+```
+
+### Method 2: Numbers
+
+* `r = 4`
+* `w = 2`
+* `x = 1`
+  (Add them)
+
+Examples:
+
+```bash
+chmod 755 file   # user=7(rwx), group=5(r-x), others=5(r-x)
+chmod 644 file   # user=6(rw-), group=4(r--), others=4(r--)
+chmod 700 file   # only user can access (rwx------)
+```
+
+---
+
+## 5. Change Owner / Group
+
+```bash
+chown user file        # change file owner
+chgrp group file       # change file’s group
+chown user:group file  # change both
+```
+
+---
+
+✅ That’s it.
+
+* **r = read, w = write, x = execute**
+* **u, g, o = user, group, others**
+* Change with `chmod`.
+
+---
