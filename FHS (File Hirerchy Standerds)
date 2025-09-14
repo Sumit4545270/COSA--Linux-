@@ -1,0 +1,214 @@
+Perfect! 💯 Let’s dive into the **Linux Filesystem Hierarchy Standard (FHS)** — the official “map” of Linux directories. If you understand this, you’ll **never feel lost in Linux** again.
+
+I’ll explain it **like a pro but in super simple language**.
+
+---
+
+# 📂 Linux Filesystem Hierarchy (FHS)
+
+👉 In Linux, **everything is a file** (yes, even devices, processes, sockets).
+👉 The root `/` is the **top directory**. All other folders live under `/`.
+
+---
+
+## 🌳 Main Directories (with pro-level but simple explanation)
+
+### `/`  (**Root**)
+
+* The **starting point** of the filesystem.
+* Every file and directory comes under `/`.
+* Equivalent to \**C:\** in Windows, but more powerful.
+
+---
+
+### `/bin`  (**User Binaries**)
+
+* Basic commands needed for **all users**.
+* Examples: `ls`, `cp`, `mv`, `cat`, `grep`.
+* Available even in single-user/rescue mode.
+
+---
+
+### `/sbin`  (**System Binaries**)
+
+* Commands for **administrators/root**.
+* Examples: `shutdown`, `reboot`, `fdisk`, `mkfs`.
+* Think: “system commands”.
+
+---
+
+### `/etc`  (**Configuration files**)
+
+* System-wide **config files** (text files).
+* Examples:
+
+  * `/etc/passwd` → user accounts.
+  * `/etc/ssh/sshd_config` → SSH server config.
+* Like **Control Panel settings**, but in text files.
+
+---
+
+### `/home`  (**User home directories**)
+
+* Personal space for users.
+* `/home/sumit` = Sumit’s files.
+* Like **C:\Users\Sumit** in Windows.
+
+---
+
+### `/root`  (**Root user’s home**)
+
+* Home directory of the **superuser (root)**.
+* Not same as `/`. It’s like the “Administrator’s Desktop”.
+
+---
+
+### `/boot`  (**Boot loader files**)
+
+* Files needed to **boot the system**.
+* Example: `vmlinuz` (kernel), `initrd.img`, `grub/`.
+* Don’t mess unless you know — or system won’t boot.
+
+---
+
+### `/dev`  (**Devices**)
+
+* Hardware devices represented as **files**.
+* Examples:
+
+  * `/dev/sda` → first hard disk.
+  * `/dev/tty` → terminal.
+  * `/dev/null` → black hole (send useless output here).
+
+👉 In Linux, hardware = files.
+
+---
+
+### `/proc`  (**Processes / Kernel info**)
+
+* Virtual filesystem with **system & process info**.
+* Example:
+
+  * `/proc/cpuinfo` → CPU details.
+  * `/proc/meminfo` → RAM details.
+* You can read kernel info like files.
+
+---
+
+### `/var`  (**Variable data**)
+
+* Logs, spool files, temp data.
+* Examples:
+
+  * `/var/log/` → system logs (`syslog`, `dmesg`).
+  * `/var/spool/mail/` → emails.
+
+---
+
+### `/tmp`  (**Temporary files**)
+
+* Temporary storage for programs.
+* Auto-cleared at reboot.
+* Example: app installers use it.
+
+---
+
+### `/usr`  (**User programs & data**)
+
+Think: “**User-installed stuff**”.
+
+* `/usr/bin` → normal user commands (not critical for boot).
+* `/usr/sbin` → admin tools (not critical for boot).
+* `/usr/lib` → libraries for programs.
+* `/usr/share` → shared docs, man pages.
+
+👉 `/usr` = “application land” vs `/bin` = “essential commands”.
+
+---
+
+### `/lib`  (**Libraries**)
+
+* Shared libraries (like `.dll` in Windows).
+* Needed for programs in `/bin` and `/sbin`.
+
+---
+
+### `/media`  (**Mount point for removable media**)
+
+* USBs, CDs, external drives auto-mount here.
+* Example: `/media/sumit/USB_DRIVE`.
+
+---
+
+### `/mnt`  (**Temporary mount point**)
+
+* Used by admins for manually mounting drives.
+* Example: `mount /dev/sdb1 /mnt/test`.
+
+---
+
+### `/opt`  (**Optional software**)
+
+* Third-party apps (like Chrome, VMware, etc.).
+* Similar to **C:\Program Files**.
+
+---
+
+### `/srv`  (**Service data**)
+
+* Data for server apps.
+* Example: `/srv/www` for web server files.
+
+---
+
+### `/lost+found`
+
+* Recovered corrupted files after a crash.
+* Each partition has its own `/lost+found`.
+
+---
+
+# 🧠 Pro Tips to Remember
+
+1. **Essentials (bootable system):** `/bin`, `/sbin`, `/etc`, `/lib`, `/boot`.
+2. **Users:** `/home`, `/root`.
+3. **Dynamic info:** `/dev`, `/proc`, `/var`, `/tmp`.
+4. **Programs:** `/usr`, `/opt`.
+5. **Mounts:** `/media`, `/mnt`.
+
+---
+
+# 🔥 Visual Map (Hierarchy)
+
+```
+/
+├── bin        (essential commands)
+├── sbin       (system commands)
+├── etc        (config files)
+├── home       (user directories)
+├── root       (root’s home)
+├── boot       (boot loader, kernel)
+├── dev        (devices as files)
+├── proc       (process info)
+├── var        (logs, cache, spool)
+├── tmp        (temporary files)
+├── usr        (apps, binaries, libraries)
+│   ├── bin
+│   ├── sbin
+│   ├── lib
+│   └── share
+├── lib        (essential libraries)
+├── media      (removable devices)
+├── mnt        (manual mounts)
+├── opt        (optional apps)
+└── srv        (server data)
+```
+
+---
+
+⚡ **Why this matters for you (to become a pro):**
+
+* Once you know **where things live**, you’ll find configs, logs, and binaries faster.
+* Sysadmins get paid for **finding problems fast** → Logs in `/var/log/`, configs in `/etc/`, crashes in `/boot/`, etc.
+
+---
