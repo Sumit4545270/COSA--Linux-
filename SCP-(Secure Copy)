@@ -1,0 +1,96 @@
+Got it 👍 Let’s go step by step.
+The `scp` (secure copy) command in Linux is used to **copy files or directories securely between machines** over SSH.
+
+---
+
+## 🔹 Basic Syntax
+
+```bash
+scp [options] source destination
+```
+
+---
+
+## 🔹 Common Use Cases
+
+### 1. Copy file from **local → remote**
+
+```bash
+scp file.txt user@remote_host:/path/to/destination/
+```
+
+👉 Example:
+
+```bash
+scp report.pdf sumit@192.168.1.100:/home/sumit/
+```
+
+---
+
+### 2. Copy file from **remote → local**
+
+```bash
+scp user@remote_host:/path/to/file.txt /local/destination/
+```
+
+👉 Example:
+
+```bash
+scp sumit@192.168.1.100:/home/sumit/report.pdf ~/Documents/
+```
+
+---
+
+### 3. Copy entire directory (with `-r`)
+
+```bash
+scp -r project/ user@remote_host:/path/to/destination/
+```
+
+👉 Example:
+
+```bash
+scp -r myapp/ sumit@192.168.1.100:/home/sumit/
+```
+
+---
+
+### 4. Using custom port (if SSH is not on default `22`)
+
+```bash
+scp -P 2222 file.txt user@remote_host:/path/
+```
+
+---
+
+### 5. Copy from one remote server → another remote server
+
+```bash
+scp user1@host1:/path/file.txt user2@host2:/path/
+```
+
+---
+
+## 🔹 Useful Options
+
+* `-r` → copy directories recursively
+* `-P port` → specify SSH port
+* `-C` → enable compression (faster for big files)
+* `-v` → verbose (debugging)
+
+---
+
+⚡ Example practical case (Linux VM ↔ Windows base machine):
+If your Windows has **OpenSSH server enabled**, you can do:
+
+```bash
+scp file.txt user@windows_ip:/Users/YourName/Desktop/
+```
+
+Or from Windows PowerShell to VM:
+
+```powershell
+scp file.txt user@vm_ip:/home/user/
+```
+
+---
